@@ -1,0 +1,51 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+        script(src="javascripts/main.js")
+        title postgres コンテナ状況
+    body
+        nav.navbar.navbar-default
+            a.navbar-brand(href=".") refresh
+        div#modal.modal.fade(data-backdrop="static")
+            div.modal-dialog
+                div.modal-content
+                    div#modal-header.modal-header
+                        button.close(type="button",data-dismiss="modal",aria-label="Close")
+                            span(aria-hidden="true") &times;
+                    div#modal-body.modal-body モーダル
+                    div#modal-footer.modal-footer
+                        button.btn.btn-default(type="button",data-dismiss="modal") キャンセル
+                        button.btn.btn-primary(type="button") OK
+        div.container
+            h1 postgres コンテナ状況
+            div
+                select#image_id.selectpicker
+                    option(value='1') デフォルト
+                button#create.btn.btn-primary(type="button") 生成
+            div.table-responsive
+                table.table.table-bordered.table-striped
+                    thead
+                        tr
+                            th コンテナ名
+                            th イメージ名
+                            th 生存時間
+                            th 操作
+                    tbody#table
+script.
+  refresh();
+  $('#create').click(function () {
+    var index = $('#image_id option:selected').val();
+    var image = images[index];
+    waitingAjax({
+      type: 'POST',
+      url: 'api/create',
+      data: {Image:image}
+    }).then(
+      containerlist_refresh
+    );});

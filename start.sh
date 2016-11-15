@@ -1,0 +1,1 @@
+docker run -d -p 3000:3000 -v /docker:/docker -v /home/okada:/home/okada -v /usr/bin/docker:/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v /lib64/libdevmapper.so.1.02:/lib64/libdevmapper.so.1.02 -v /lib64/libudev.so.0:/lib64/libudev.so.0 -v /docker/okada/testpostgres/testpostgres/dockerpostgres:/root/dockerpostgres --name mainpostgres_1 mainpostgres
