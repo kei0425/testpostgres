@@ -9,7 +9,7 @@
 6 silly lifecycle top@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle top@0.0.0~start: top@0.0.0
 8 verbose lifecycle top@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle top@0.0.0~start: PATH: /home/okada/.nvm/versions/node/v7.1.0/lib/node_modules/npm/bin/node-gyp-bin:/docker/okada/testpostgres/top/top/node_modules/.bin:/home/okada/.nvm/versions/node/v7.1.0/bin:/home/okada/.nodebrew/current/bin:/usr/local/heroku/bin:/sbin:/bin:/usr/sbin:/usr/bin
+9 verbose lifecycle top@0.0.0~start: PATH: /home/okada/.nvm/versions/node/v7.1.0/lib/node_modules/npm/bin/node-gyp-bin:/docker/okada/testpostgres/top/top/node_modules/.bin:/usr/local/heroku/bin:/home/okada/.nvm/versions/node/v7.1.0/bin:/sbin:/bin:/usr/sbin:/usr/bin
 10 verbose lifecycle top@0.0.0~start: CWD: /docker/okada/testpostgres/top/top
 11 silly lifecycle top@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle top@0.0.0~start: Returned: code: 1  signal: null

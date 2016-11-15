@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "echo test",
+    "pretest": "echo pretest",
+    "posttest": "echo posttest",
+    "abc": "echo abc",
+    "preabc": "echo preabc",
+    "prepreabc": "echo prepreabc"
   },
   "engineStrict": true,
   "dependencies": {
@@ -15,5 +21,10 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "stylus": "0.54.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.3",
+    "typescript": "^2.0.9"
   }
 }

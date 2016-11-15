@@ -12,16 +12,6 @@ html(lang="ja")
     body
         nav.navbar.navbar-default
             a.navbar-brand(href=".") refresh
-        div#modal.modal.fade(data-backdrop="static")
-            div.modal-dialog
-                div.modal-content
-                    div#modal-header.modal-header
-                        button.close(type="button",data-dismiss="modal",aria-label="Close")
-                            span(aria-hidden="true") &times;
-                    div#modal-body.modal-body モーダル
-                    div#modal-footer.modal-footer
-                        button.btn.btn-default(type="button",data-dismiss="modal") キャンセル
-                        button.btn.btn-primary(type="button") OK
         div.container
             h2 コンテナ生成
             div
@@ -45,14 +35,4 @@ html(lang="ja")
                             th 操作
                     tbody#table
 script.
-  refresh();
-  $('#create').click(function () {
-    var index = $('#image_id option:selected').val();
-    var image = images[index];
-    waitingAjax({
-      type: 'POST',
-      url: 'api/create',
-      data: {Image:image}
-    }).then(
-      containerlist_refresh
-    );});
+  init();
